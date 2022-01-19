@@ -1,0 +1,19 @@
+﻿@using NymaEshop2.Data.Repository;
+
+@inject IGroupRepository _grouprepositiry;
+
+
+<li class="nav-item dropdown">
+
+    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">گروه ها</a>
+
+    <div class="dropdown-menu" aria-labelledby="dropdown09">
+
+        @foreach (var item in _grouprepositiry.GetAllCategories())
+
+        {
+            <a class="dropdown-item" href="/Group/@item.Id/@item.NameCT">@item.NameCT</a>
+        }
+
+    </div>
+</li>
